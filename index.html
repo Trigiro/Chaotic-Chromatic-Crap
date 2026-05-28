@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Свиток Красок</title>
+  <title>Chaotic Chromatic Crap</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -415,7 +415,7 @@
 
   <div class="header">
     <div class="header-runes">ᚱ ᚨ ᚾ ᛞ ᛗ</div>
-    <h1>⚔ Свиток Красок</h1>
+    <h1>⚔ Хаотичеки Хороматическая Хрень ⚔</h1>
     <div class="subtitle">Paint Randomizer · For the Brave Miniaturist</div>
   </div>
 
@@ -429,7 +429,7 @@
         <span class="rune">ᚾ</span>
         <span class="rune">ᚲ</span>
       </div>
-      <div class="beam-label">Хроника Чародея</div>
+      <div class="beam-label">Свиток красок</div>
       <div class="rune-strip">
         <span class="rune">ᚲ</span>
         <span class="rune">ᚾ</span>
@@ -457,7 +457,7 @@
             <div class="reel-fade-top"></div>
             <div class="reel-fade-bottom"></div>
           </div>
-          <button class="spin-btn" id="washBtn" onclick="spinWash()">✦ Воззвать Судьбу</button>
+          <button class="spin-btn" id="washBtn" onclick="spinWash()">✦ Пробудить рок</button>
         </div>
 
         <div class="section-divider"></div>
@@ -468,7 +468,7 @@
             <div class="reel-fade-top"></div>
             <div class="reel-fade-bottom"></div>
           </div>
-          <button class="spin-btn" id="dryBtn" onclick="spinDry()">✦ Воззвать Судьбу</button>
+          <button class="spin-btn" id="dryBtn" onclick="spinDry()">✦ Завершить ритуал</button>
         </div>
 
       </div>
@@ -492,36 +492,49 @@
   <script>
     const basePaints = [
       "Черная","Белая","Желтая","Желтая сера","Пчела","Электрик лайм",
-      "Киноварь","Ржавчина оранжевая","Алый","Бордовый","Рубиново-красный",
-      "Черно-красный","Фиолетовая","Индиго","Пурпурный","Лаймово-зеленый",
-      "Оливковый","Изумрудный","Русская зеленая","Глубокий синевато-зеленый",
-      "Зеленый гоблин","Зеленый сок","Серый бетон","Кобальт синий",
-      "Ярко синяя","Ночной синий","Коричневый","Красновато-коричневый",
-      "Темная красно-коричневая","Телесная ультра нежная","Телесная",
-      "Телесная кофейная","Телесный тени"
+      "Киноварь","Ржавчина свежая","Красный","Бордовый","Рубиново-красный",
+      "Черно-красный","Темный красно-коричневый","Коричневый","Фиолетовая","Индиго","Телемагента",
+      "Оливковый","Изумрудный","Апельсин","Русская зеленая","Глубокий синевато-зеленый",
+      "Зеленый гоблин","Зеленый сок","Кадетский синий","Серый бетон","Кобальт синий",
+      "Ярко синяя","Ночной синий","Телесная ультра нежная","Телесная",
+      "Телесная кофейная","Телесный тени","Резедово-зеленый",
+      "Зеленый просроченный"
     ];
 
     const washes = [
-      "Nuln Oil","Agrax Earthshade","Reikland Fleshshade",
-      "Drakenhof Nightshade","Seraphim Sepia","Coelia Greenshade"
+      "Black Wash","Pale Grey","Umber Wash",
+      "Sepia Shade","Flesh Wash","Red Wash",
+      "Green Wash","Blue Wash","Ruddy fur",
+      "Аптекарский белый","Крокодилья чешуя",
+      "Reikland Fleshshade","Коричневая Agrax",
+      "Drakenhof Nightshade","Flesh tearers red",
+      "Mantis warriors green"
+      
     ];
 
     const colorMap = {
       "Черная":"#111111","Белая":"#FFFFFF","Желтая":"#FFD300",
       "Желтая сера":"#EDFF21","Пчела":"#FFB900","Электрик лайм":"#CCFF00",
-      "Киноварь":"#E34234","Ржавчина оранжевая":"#B7410E","Алый":"#FF2400",
+      "Киноварь":"#E34234","Ржавчина свежая":"#b7410e","Красный":"#FF0000",
       "Бордовый":"#800020","Рубиново-красный":"#9B111E","Черно-красный":"#412227",
-      "Фиолетовая":"#800080","Индиго":"#560591","Пурпурный":"#800080",
-      "Лаймово-зеленый":"#32CD32","Оливковый":"#808000","Изумрудный":"#50C878",
+      "Темный красно-коричневый":"#321011","Коричневый":"#A52A2A",
+      "Фиолетовая":"#800080","Индиго":"#560591","Телемагента":"#CF3476",
+      "Оливковый":"#808000","Изумрудный":"#50C878","Апельсин":"#FFA500",
       "Русская зеленая":"#679267","Глубокий синевато-зеленый":"#00382B",
-      "Зеленый гоблин":"#19b535","Зеленый сок":"#3bde39","Серый бетон":"#818479",
-      "Кобальт синий":"#0047AB","Ярко синяя":"#0000FF","Ночной синий":"#191970",
-      "Коричневый":"#964B00","Красновато-коричневый":"#A52A2A",
-      "Темная красно-коричневая":"#C04000","Телесная ультра нежная":"#F4D5BB",
+      "Зеленый гоблин":"#19b535","Зеленый сок":"#3bde39","Кадетский синий":"#5F9EA0",
+      "Серый бетон":"#818479","Кобальт синий":"#0047AB","Ярко синяя":"#0000FF",
+      "Ночной синий":"#191970","Телесная ультра нежная":"#F4D5BB",
       "Телесная":"#C68642","Телесная кофейная":"#8D5524","Телесный тени":"#5a3d28",
-      "Nuln Oil":"#1a1a1a","Agrax Earthshade":"#6b3a1f",
-      "Reikland Fleshshade":"#a0522d","Drakenhof Nightshade":"#1a3a5c",
-      "Seraphim Sepia":"#8b6914","Coelia Greenshade":"#1a5c3a"
+      "Резедово-зеленый":"#66825B","Зеленый просроченный":"#007848",
+      "Black Wash":"#353433","Pale Grey":"#B7BDBD","Umber Wash":"#393121",
+      "Sepia Shade":"#843910","Flesh Wash":"#eec8c7","Red Wash":"#c5512d",
+      "Green Wash":"#434f38","Blue Wash":"#273e51","Ruddy fur":"#WP2065",
+      "Аптекарский белый":"#99b5ad","Крокодилья чешуя":"#1f8a85",
+      "Reikland Fleshshade":"#ca6c4d","Коричневая Agrax":"#5a573f",
+      "Druchii фиолетовая":"#7a468c","Targor Rageshade":"#7D6E7F",
+      "Drakenhof Nightshade":"#125899","Flesh tearers red":"#9a1115",
+      "Mantis warriors green":"#7bb661",
+     
     };
 
     function getColor(name) {
