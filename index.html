@@ -121,25 +121,26 @@
     }
 
     /* Chaos meter (stars) */
-    .chaos-meter {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      color: var(--ink-dim);
+     .chaos-meter {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 12px;
+     margin-bottom: 20px;
+     font-size: 2rem;          /* эмодзи чуть крупнее */
+     color: var(--ink-dim);
     }
 
     .chaos-star {
-      opacity: 0.3;
-      transition: opacity 0.3s, text-shadow 0.3s;
+    opacity: 0.3;
+    transition: opacity 0.3s, text-shadow 0.3s, transform 0.3s;
+    display: inline-block;
     }
 
     .chaos-star.active {
-      opacity: 1;
-      color: var(--gold-bright);
-      text-shadow: 0 0 14px var(--gold-glow);
+     opacity: 1;
+     text-shadow: 0 0 14px var(--gold-glow);
+     transform: scale(1.1);
     }
 
     .chaos-message {
